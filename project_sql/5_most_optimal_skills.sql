@@ -23,6 +23,8 @@ SELECT
         AND job_title = 'Data Analyst'
 GROUP BY
     skills_dim.skill_id
+HAVING
+    Count(skills_job_dim.job_id) > 10
 ORDER BY
     avg_salary DESC,
     skill_count DESC
